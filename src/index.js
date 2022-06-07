@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import { UseFetch } from './useFetch';
 import { AppProvider } from './Context';
-import { Router } from 'react-router-dom';
+import { Router as BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AppProvider>
-      <Router>
+      {/* <BrowserRouter> */}
         <App/>
-      </Router>
+      {/* </BrowserRouter> */}
     </AppProvider>
     
   </React.StrictMode>

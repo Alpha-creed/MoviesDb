@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
-const API_ENDPOINT = `https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt1375666/?apikey=${"403a98f995msh69d70d1df3af39dp152b7ajsnbbe248602459"}`
+
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
 
 export const useFetch = (urlParams) =>{
     const [isLoading,setIsLoading] = useState(true)

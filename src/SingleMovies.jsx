@@ -1,8 +1,8 @@
 import { useFetch } from "./useFetch"
-import {useParams,Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import {Typography,Box} from '@mui/material'
 import { Button } from "@mui/material"
-import { Container } from "@mui/material"
+import { Link } from "@mui/material"
 
 export const SingleMovie = ()=>{
     const {id} = useParams()
@@ -17,7 +17,7 @@ export const SingleMovie = ()=>{
                 <Typography variant="h1">
                     {error.msg}
                 </Typography>
-                <Link to="/" >
+                <Link href="Home" >
                 <Button>
                     Back to movies    
                 </Button>    
@@ -26,23 +26,23 @@ export const SingleMovie = ()=>{
         )
     }
 
-    const {Poster:image,Title:title,Plot:description,Year:imdb_date} = movie
-    return (
+    const { Poster: poster, Title: title, Plot: plot, Year: year } = movie   
+     return (
         <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-                <img src={image} alt={title}/>
+                <img src={poster} alt={title}/>
             </Grid>
             <Grid item xs={12} md={6}>
                 <Typography variant="h2">
                     {title}
                 </Typography>
                 <Typography variant="body">
-                    {description}
+                    {plot}
                 </Typography>
                 <Typography variant="h4">
-                    {imdb_date}
+                    {year}
                 </Typography>
-                <Link to="/">
+                <Link href="/">
                     <Button>
                         Back to movies
                     </Button>

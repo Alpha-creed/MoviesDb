@@ -3,7 +3,7 @@ import { useContext } from "react"
 import React from "react"
 import { useFetch } from "./useFetch"
 
-export const API_ENDPOINT = `https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt1375666/?apikey=${"403a98f995msh69d70d1df3af39dp152b7ajsnbbe248602459"}`
+const API_ENDPOINT = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_MOVIE_API_KEY}`
 export const AppContext = React.createContext()
 
 export const AppProvider = ({children})=>{
